@@ -22,9 +22,6 @@ case class Balances(private val underlying: Map[(String, Currency), Money[Curren
     val usd = underlying(usdKey)
     val (assetChange, usdChange) = exec(order)
 
-    val i = 4
-    i.!=(2)
-
     Balances(underlying
       .updated(key, asset + assetChange)
       .updated(usdKey, usd + usdChange))
